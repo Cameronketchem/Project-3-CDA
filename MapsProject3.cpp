@@ -261,7 +261,7 @@ public:
 				top->additionalInfo.at(2) = to_string(stoi(top->additionalInfo.at(2)) + 3);
 			}
 			if (top->right != NULL) {
-				searchKeyWord(top->right, word, count);
+				count = searchKeyWord(top->right, word, count);
 			}
 			return count;
 		}
@@ -384,7 +384,6 @@ int main() {
 			cout << "What's the key word?" << endl;
 			string word;
 			cin >> word;
-			getline(cin,word);
 			int counter = 0;
 			clock_t start = clock();
 			counter = bookStorage.searchKeyWord(head, word, 0);
@@ -405,7 +404,7 @@ int main() {
 			cout << "What year do you want?" << endl;
 			string year;
 			cin >> year;
-			getline(cin,year);
+			//getline(cin,year);
 			clock_t start = clock();
 			int counter = 0;
 			counter = bookStorage.searchYear(head, year, 0);
